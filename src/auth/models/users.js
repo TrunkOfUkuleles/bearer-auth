@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.virtual('token').get(function(){
     let newTokenObj = {username: this.username}
-    return jwt.sign(newTokenObj, SECRET);
+    return jwt.sign(newTokenObj, SECRET, { expiresIn: '15m'});
 });
 
 userSchema.pre('save', async function(){
