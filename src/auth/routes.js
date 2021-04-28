@@ -9,9 +9,9 @@ const bearerAuth = require('./middleware/bearer.js');
 
 
 
-authRoutes.get('/', ()=>{
-    "Proof of Life"
-})
+// authRoutes.get('/', ()=>{
+//     "Proof of Life"
+// })
 
 authRoutes.post('/signup', async (req,res,next) => {
     let newUser = new User(req.body);

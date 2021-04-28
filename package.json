@@ -9,7 +9,8 @@
     "start watch": "nodemon index.js"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -23,8 +24,8 @@
   },
   "mongodbMemoryServerOptions": {
     "binary": {
-    "version": "4.2.3",
-    "skipMD5": true
+      "version": "4.2.3",
+      "skipMD5": true
     },
     "instance": {
       "dbName": "jest"
@@ -43,6 +44,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb-memory-server": "^6.9.6",
     "mongoose": "^5.12.5",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "supergoose": "^0.2.6",
+    "supertest": "^6.1.3"
   }
 }

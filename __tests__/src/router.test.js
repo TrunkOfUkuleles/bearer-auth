@@ -2,9 +2,9 @@
 
 process.env.SECRET = "toes";
 
-const server = require('../../src/server.js');
+const server = require('../../src/server.js').server;
 const supergoose = require('@code-fellows/supergoose');
-// const bearer = require('../../src/auth/middleware/bearer.js');
+const bearer = require('../../src/auth/middleware/bearer.js');
 
 const mockRequest = supergoose(server) ;
 
@@ -24,7 +24,7 @@ describe('Auth Router', () => {
 
         const response = await mockRequest.post('/signup').send(users[userType]);
         const userObject = response.body;
-
+          console.log("CreateTeast: ", userObject)
         expect(response.status).toBe(201);
         expect(userObject.token).toBeDefined();
         expect(userObject.user._id).toBeDefined();
