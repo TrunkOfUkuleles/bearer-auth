@@ -1,0 +1,51 @@
+{
+  "name": "bearer-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node index.js",
+    "start watch": "nodemon index.js"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrunkOfUkuleles/bearer-auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrunkOfUkuleles/bearer-auth/issues"
+  },
+  "mongodbMemoryServerOptions": {
+    "binary": {
+      "version": "4.2.3",
+      "skipMD5": true
+    },
+    "instance": {
+      "dbName": "jest"
+    },
+    "autoStart": "false"
+  },
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.1.0",
+    "@shelf/jest-mongodb": "^1.2.4",
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb-memory-server": "^6.9.6",
+    "mongoose": "^5.12.5",
+    "morgan": "^1.10.0",
+    "supergoose": "^0.2.6",
+    "supertest": "^6.1.3"
+  }
+}
