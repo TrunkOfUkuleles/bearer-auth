@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
-let SECRET = process.env.USER_SECRET
+let SECRET = process.env.SECRET
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
@@ -19,7 +19,7 @@ userSchema.virtual('token').get(function(){
 });
 
 userSchema.pre('save', async function(){
-    this.password = await bcrypt.hash(this.password, 5);
+    this.password = await bcrypt.hash(this.password, 10);
 })
 
 userSchema.statics.basicAuth = async function (username, password){

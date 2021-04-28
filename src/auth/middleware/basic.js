@@ -5,7 +5,7 @@ const base64 = require('base-64');
 const User = require('../models/users.js');
 
 module.exports = async (req,res,next) => {
-
+    console.log("basic hit")
     if(!req.headers.authorization) { next("No Headers")}
 
     let basic = req.headers.authorization.split(" ").pop();

@@ -14,8 +14,7 @@ module.exports = async (req,res,next) => {
         req.user = validation
         req.token = validation.token
         next();
-    
-    
+
 }catch(e){
         res.status(403).send('Invalid Login')
     }

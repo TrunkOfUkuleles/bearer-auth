@@ -6,7 +6,7 @@ const server = require('../../src/server.js');
 const supergoose = require('@code-fellows/supergoose');
 // const bearer = require('../../src/auth/middleware/bearer.js');
 
-const mockRequest = supergoose(server);
+const mockRequest = supergoose(server) ;
 
 let users = {
   admin: { username: 'admin', password: 'password' },
@@ -38,6 +38,7 @@ describe('Auth Router', () => {
           .auth(users[userType].username, users[userType].password);
 
         const userObject = response.body;
+        console.log(userObject)
         expect(response.status).toBe(200);
         expect(userObject.token).toBeDefined();
         expect(userObject.user._id).toBeDefined();
